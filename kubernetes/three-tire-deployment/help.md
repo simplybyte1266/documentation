@@ -86,7 +86,6 @@ JDBC URL:
 
     jdbc:mysql://mysql-0.mysql:3306/simplybyte
 
-
 ## MySQL JDBC URL Explanation
 
 The backend Spring Boot application connects to MySQL using the following JDBC URL:
