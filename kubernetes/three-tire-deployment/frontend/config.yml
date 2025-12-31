@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: simplybyte-frontend-config
+data:
+  config.json: |
+    {
+      "userService": "http://api.localhost/",
+      "utilService": "http://localhost/util/"
+    }

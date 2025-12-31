@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simplybyte-frontend
+  labels:
+    app: simplybyte-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simplybyte-frontend
+  template:
+    metadata:
+      labels:
+        app: simplybyte-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: simplybyte/simplybyte-ui:3.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: config
+              mountPath: /usr/share/nginx/html/assets/config.json
+              subPath: config.json
+      volumes:
+        - name: config
+          configMap:
+            name: simplybyte-frontend-config
